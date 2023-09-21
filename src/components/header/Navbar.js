@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
@@ -17,18 +17,17 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 const pages = ['Home', 'About', 'Participation', 'Volunteering', 'contact'];
-const settings = ['Light', 'Dark'];
+// const settings = ['Light', 'Dark'];
 
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+//   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [lightMode, setLightMode]=React.useState(true);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleMode = (event) => {
-    // setAnchorElUser(event.currentTarget);
+  const handleMode = () => {
     setLightMode(!lightMode);
   };
 
@@ -36,9 +35,9 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+//   const handleCloseUserMenu = () => {
+//     setAnchorElUser(null);
+//   };
 
   return (
     <AppBar position="static">
@@ -140,7 +139,7 @@ function Navbar() {
                 
               </IconButton>
             </Tooltip>
-            <Menu
+            {/* <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -161,7 +160,7 @@ function Navbar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>
