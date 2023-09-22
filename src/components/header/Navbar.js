@@ -10,11 +10,11 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../../assets/logo.png";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useMode } from "../../ModeContext";
+import { Image } from "@mui/icons-material";
 
 const pages = ["Home", "About", "Participation", "Volunteering", "contact"];
 
@@ -35,19 +35,20 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
-
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img
-            src={logo}
-            alt=""
-            style={{
+          
+          <Box
+            component="img"
+            sx={{
               display: { xs: "none", md: "flex" },
               mr: 1,
-              width: "60px",
+              width: "50px",
             }}
+            alt="The Lakkaru logo."
+            src={logo}
           />
           <Typography
             variant="h6"
@@ -103,8 +104,17 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          {/* <img src={logo} alt='' style={{ display: { xs: 'flex', md: 'none' }, mr: 1  , width:'60px'}}/> */}
+          
+          <Box
+            component="img"
+            sx={{
+              display: { xs: "flex", md: "none" },
+              mr: 1,
+              width: "60px",
+            }}
+            alt="The Lakkaru logo."
+            src={logo}
+          />
           <Typography
             variant="h5"
             noWrap
@@ -123,7 +133,7 @@ function Navbar() {
           >
             Lakkaru
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } , justifyContent:'flex-end', mr:4}}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -138,7 +148,6 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Mode">
               <IconButton onClick={handleMode} sx={{ p: 0 }}>
-                {/* <Avatar alt="Remy Sharp" src={LightModeIcon} /> */}
                 {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
               </IconButton>
             </Tooltip>
